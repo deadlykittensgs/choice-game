@@ -12,20 +12,21 @@ const [escape, setEscape] = useState(null)
 
 
 
+  
+let battleResults = 0;
+let attackDamage = 0;
 
 
-function attack(dodge) {
+function attack() {
     setEscape(null)
     
-    let weaponDamage = 0;
-    let battleResults = 0;
-    let attackDamage = 0;
-
 
 let dodgeChance = Math.floor(Math.random() * 10) +1 
 
-if(dodgeChance > dodge) {
-    setResponse(`The ${monster} dodged your attack`) 
+if(dodgeChance > 7) {
+    setResponse(`The ${monster} dodged your attack and hits you for 80hp`) 
+    setHp(hp -80)
+    return
 }
 
 
@@ -105,7 +106,7 @@ setResponse("you tripped and fell losing 10 hp and failed ot escape")
        <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
        <p className='text-green-400'>HP: {hp}</p> 
        <p className='text-yellow-300'>Gold:{gold}</p> 
-       <p>Weapon: fist</p>
+       <p>Weapon: {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>

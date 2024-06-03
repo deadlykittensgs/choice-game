@@ -11,6 +11,7 @@ import Work from './Components/Work'
 import Lost from './Components/Lost'
 import Monster from './Components/Monster'
 import Dragon from './Components/Dragon'
+import Winner from './Components/Winner'
 
 
 
@@ -18,7 +19,7 @@ import Dragon from './Components/Dragon'
 function App() {
   const [location, setLocation] = useState("town")
   const [hp, setHp] = useState(100)
-  const [gold, setGold] = useState(50000)
+  const [gold, setGold] = useState(1000)
   const [weapon, setWeapon] = useState("fist")
   const[monster, setMonster]=useState(null)
   const [monsterHp, setmonsterHp] = useState(1)
@@ -78,7 +79,7 @@ function conditionallyRender() {
     return(<Dragon monsterHp={monsterHp} setmonsterHp={setmonsterHp} monster={monster} setMonster={setMonster} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
 
-  if (location === 'dragon') {
+  if (location === 'winner') {
     return(<Winner monsterHp={monsterHp} setmonsterHp={setmonsterHp} monster={monster} setMonster={setMonster} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
   

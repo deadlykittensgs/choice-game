@@ -1,5 +1,9 @@
 import React from 'react'
 
+
+
+
+
 export default function Fight({setmonsterHp, monsterHp, setMonster, monster, hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon }) {
    
 
@@ -27,6 +31,9 @@ if (monster === "randy") {
 
     }
    
+
+
+
    
    
     return (
@@ -40,7 +47,7 @@ if (monster === "randy") {
        <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
        <p className='text-green-400'>HP: {hp}</p> 
        <p className='text-yellow-300'>Gold:{gold}</p> 
-       <p>Weapon: fist</p>
+       <p>Weapon: {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>

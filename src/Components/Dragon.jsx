@@ -4,40 +4,36 @@ import { useState } from 'react';
 export default function Dragon({setmonsterHp, monsterHp, setMonster, monster, hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon }) {
 
 
-    // if(monster === "dragon" && monsterHp < 0 )
-    // {
-    //     changePage(winner)
-    // }
+  
 
 
 
 
 
     const [response, setResponse] = useState("test")  
-    let weaponDamage = 0;
     let battleResults = 0;
     let attackDamage = 0;
+   
 
 
+    function attackDragon() {
 
-    function attack(dodge) {
-  
-    
-       
-        let weaponDamage = 0;
-        let battleResults = 0;
-        let attackDamage = 0;
-    
-    
+        if(monster === "dragon" && monsterHp < 1 )
+        {
+            changePage("winner")
+        }
+
     let dodgeChance = Math.floor(Math.random() * 10) +1 
     
-    if(dodgeChance > dodge) {
-        setResponse(`The ${monster} dodged your attack`) 
+    if(dodgeChance > 7) {
+        setResponse(`The ${monster} dodged your attack and hits you for 80hp`) 
+        setHp(hp -80)
+        return
     }
     
     
     if (weapon === "fist"){
-        attackDamage = Math.floor(Math.random() * 20) +1
+        attackDamage = 1000
      battleResults = monsterHp - attackDamage
      setmonsterHp(battleResults)
      setResponse(`You hit the ${monster} for ${attackDamage}hp`)
@@ -50,14 +46,14 @@ export default function Dragon({setmonsterHp, monsterHp, setMonster, monster, hp
     }
     
     if (weapon === "dagger") {
-        attackDamage = Math.floor(Math.random() * 20) +1
+        attackDamage = 20
         battleResults = monsterHp - attackDamage
         setmonsterHp(battleResults)
         setResponse(`You hit the ${monster} for ${attackDamage}hp`)
     }
     
     if (weapon === "sword") {
-        attackDamage = Math.floor(Math.random() * 20) +1
+        attackDamage = 30
         battleResults = monsterHp - attackDamage
         setmonsterHp(battleResults)
         setResponse(`You hit the ${monster} for ${attackDamage}hp`)
@@ -113,8 +109,8 @@ export default function Dragon({setmonsterHp, monsterHp, setMonster, monster, hp
     
     {/* buttons  */}
     <div className='flex justify-evenly p-3'> 
-        <button className='bg-yellow-500 w-1/5' onClick={() => attack()} >fight</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => attack()} >dodge</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => attackDragon()} >fight</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => attackDragon()} >dodge</button>
     </div>
     
     <div className='flex align-center justify-center p-10'> {response}</div>
