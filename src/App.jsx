@@ -8,6 +8,9 @@ import Fight from './Components/Fight'
 import Loot from './Components/Loot'
 import Shop from './Components/Shop'
 import Work from './Components/Work'
+import Lost from './Components/Lost'
+import Monster from './Components/Monster'
+import Dragon from './Components/Dragon'
 
 
 
@@ -15,9 +18,10 @@ import Work from './Components/Work'
 function App() {
   const [location, setLocation] = useState("town")
   const [hp, setHp] = useState(100)
-  const [gold, setGold] = useState(500)
+  const [gold, setGold] = useState(50000)
   const [weapon, setWeapon] = useState("fist")
-
+  const[monster, setMonster]=useState(null)
+  const [monsterHp, setmonsterHp] = useState(1)
 
 
 
@@ -45,6 +49,9 @@ function changeWepon(change) {
 
 
 function conditionallyRender() {
+  if (hp < 1){
+    return(<Lost   changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+  }
   if (location === 'town') {
     return(<Town   changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
@@ -55,13 +62,24 @@ function conditionallyRender() {
     return(<Work  changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon}   />)
   }
   if (location === 'explore') {
-    return(<Explore  changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+    return(<Explore setMonster={setMonster} setmonsterHp={setmonsterHp} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
   if (location === 'fight') {
-    return(<Fight changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+    return(<Fight monsterHp={monsterHp} setmonsterHp={setmonsterHp}  monster={monster} setMonster={setMonster} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
   if (location === 'loot') {
     return(<Loot  changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+  }
+  if (location === 'monster') {
+    return(<Monster monsterHp={monsterHp} setmonsterHp={setmonsterHp} monster={monster} setMonster={setMonster} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+  }
+
+  if (location === 'dragon') {
+    return(<Dragon monsterHp={monsterHp} setmonsterHp={setmonsterHp} monster={monster} setMonster={setMonster} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+  }
+
+  if (location === 'dragon') {
+    return(<Winner monsterHp={monsterHp} setmonsterHp={setmonsterHp} monster={monster} setMonster={setMonster} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
   
 

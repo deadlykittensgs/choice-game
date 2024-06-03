@@ -16,9 +16,9 @@ export default function Town({ hp, setHp, gold, setGold, weapon, setWeapon, chan
     <div className='flex bg-zinc-400 justify-evenly p-3' > 
     {/* stats  */}
        <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
-       <p className='text-green-400'>HP: 100</p> 
-       <p className='text-yellow-300'>Gold:100</p> 
-       <p>Weapon: fist</p>
+       <p className='text-green-400'>HP: {hp}</p> 
+       <p className='text-yellow-300'>Gold:{gold}</p> 
+       <p>Weapon: {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>

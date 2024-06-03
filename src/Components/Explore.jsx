@@ -1,10 +1,16 @@
 import React from 'react'
 
-export default function Explore({ hp, setHp, gold, setGold, weapon, setWeapon,changePage, changeHp, changeGold, changeWepon }) {
+export default function Explore({ setMonster,setmonsterHp, hp, setHp, gold, setGold, weapon, setWeapon,changePage, changeHp, changeGold, changeWepon }) {
    
+
+
+    function fightTheDragon() {
+        setMonster("dragon")
+        setmonsterHp(10000) 
+        changePage("dragon")
+    }
    
-   
-   
+  
     return (
 
         // container 
@@ -23,9 +29,14 @@ export default function Explore({ hp, setHp, gold, setGold, weapon, setWeapon,ch
             <p className='text-[2rem]'>DragonSlayer</p>
         </div>
         {/* location  */}
-        <div className='flex self-center '>Explore</div>
+       
+        <div className='flex flex-col self-center '>
+        <button><i onClick={() => changePage("town")} className="fa-solid fa-house" ></i></button>
+            <p>Explore</p> 
+        </div>
+        
+        
     </div>
-    
     
     
     
@@ -37,9 +48,9 @@ export default function Explore({ hp, setHp, gold, setGold, weapon, setWeapon,ch
     
     {/* buttons  */}
     <div className='flex justify-evenly p-3'> 
-        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("explore")}>Fight</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("explore")} >Loot</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("explore")}  >Dragon</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("fight")}>Fight</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("loot")} >loot</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => fightTheDragon() }>Dragon</button>
     </div>
     
     <div className='flex align-center justify-center p-10'> this is the result of your purchase</div>

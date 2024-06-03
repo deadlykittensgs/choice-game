@@ -17,7 +17,8 @@ const [report, setReport] = useState(0)
 function workForFarmer() {
     let randomNumber = Math.floor(Math.random() * 50) +1  
     changeGold(randomNumber)
-    setReport(randomNumber)
+    setReport(`your daily wages are: ${randomNumber}`)
+    changeHp(-2)
 }
 
 function workForButcher() {
@@ -25,7 +26,7 @@ function workForButcher() {
    
     if (randomNumber >20) {
         changeGold(randomNumber)
-        setReport(randomNumber)
+        setReport(`your daily wages are: ${randomNumber}`)
        }
 
     if (randomNumber < 20) {
@@ -34,6 +35,7 @@ function workForButcher() {
     }
     if (randomNumber === 20) {
         setReport("you were awarded a sword for your hard work!")
+        setWeapon("sword")
     }
 
 }
@@ -44,7 +46,7 @@ function workForMiller() {
    
    if (randomNumber >20) {
     changeGold(randomNumber)
-    setReport(randomNumber)
+    setReport(`your daily wages are: ${randomNumber}`)
    }
    
     if (randomNumber < 20) {
@@ -53,6 +55,7 @@ function workForMiller() {
     }
     if (randomNumber === 20) {
         setReport("you were awarded a sword for your hard work!")
+        setWeapon("sword")
     }
 
 }
@@ -71,7 +74,7 @@ function workForMiller() {
        <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
        <p className='text-green-400'>HP: {hp}</p> 
        <p className='text-yellow-300'>Gold: {gold}</p> 
-       <p>Weapon: fist</p>
+       <p>Weapon: {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>
@@ -102,7 +105,7 @@ function workForMiller() {
         <button className='bg-yellow-500 w-1/5' onClick={() => workForMiller()}>Miller</button>
     </div>
     
-    <div className='flex align-center justify-center p-10'> <p>your daily wages are: {report}</p></div>
+    <div className='flex align-center justify-center p-10'> <p>{report}</p></div>
     </div>
     
     
