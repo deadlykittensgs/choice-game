@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function Work({hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon }) {
 
-const [report, setReport] = useState(0)
+const [report, setReport] = useState(null)
 
 
 

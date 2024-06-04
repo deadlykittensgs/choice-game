@@ -131,9 +131,9 @@ setResponse("you tripped and fell losing 10 hp and failed ot escape")
     
     {/* buttons  */}
     <div className='flex justify-evenly p-3'> 
-        <button className='bg-yellow-500 w-1/5' onClick={() => attack(8)} >Attack</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => attack()} >Attack</button>
         <button className='bg-yellow-500 w-1/5' onClick={() => flee()} >Flee</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => befriend() } >befriend</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => attack() } >befriend</button>
     </div>
     
     <div className='flex align-center justify-center p-10'> {response} <button onClick={ () => changePage("town")} className='bg-yellow-500 rounded'>{escape}</button></div>
