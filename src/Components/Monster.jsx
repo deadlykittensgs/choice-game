@@ -25,33 +25,33 @@ let dodgeChance = Math.floor(Math.random() * 10) +1
 
 if(dodgeChance > 7) {
     setResponse(`The ${monster} dodged your attack and hits you for 80hp`) 
-    setHp(hp -80)
+    setHp(hp -40)
     return
 }
 
 
 if (weapon === "fist"){
-    attackDamage = Math.floor(Math.random() * 20) +1
+    attackDamage = Math.floor(Math.random() * 200) +1
  battleResults = monsterHp - attackDamage
  setmonsterHp(battleResults)
  setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 }
   if (weapon === "stick")
-  attackDamage = Math.floor(Math.random() * 40) +1
+  attackDamage = Math.floor(Math.random() * 400) +1
    battleResults = monsterHp - attackDamage
   setmonsterHp(battleResults)
   setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 }
 
 if (weapon === "dagger") {
-    attackDamage = Math.floor(Math.random() * 80) +1
+    attackDamage = Math.floor(Math.random() * 800) +1
     battleResults = monsterHp - attackDamage
     setmonsterHp(battleResults)
     setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 }
 
 if (weapon === "sword") {
-    attackDamage = Math.floor(Math.random() * 160) +1
+    attackDamage = Math.floor(Math.random() * 1600) +1
      battleResults = monsterHp - attackDamage
     setmonsterHp(battleResults)
     setResponse(`You hit the ${monster} for ${attackDamage}hp`)
@@ -59,7 +59,7 @@ if (weapon === "sword") {
 
 
   if (weapon === "dragonslayer") {
-    attackDamage = Math.floor(Math.random() * 350) +1
+    attackDamage = Math.floor(Math.random() * 3500) +1
     attackDamage = 100
     battleResults = monsterHp - attackDamage
     setmonsterHp(battleResults)
