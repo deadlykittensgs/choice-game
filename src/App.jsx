@@ -19,7 +19,7 @@ import Winner from './Components/Winner'
 function App() {
   const [location, setLocation] = useState("town")
   const [hp, setHp] = useState(100)
-  const [gold, setGold] = useState(1000)
+  const [gold, setGold] = useState(500)
   const [weapon, setWeapon] = useState("fist")
   const[monster, setMonster]=useState(null)
   const [monsterHp, setmonsterHp] = useState(1)
