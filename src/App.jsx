@@ -9,7 +9,7 @@ import Loot from './Components/Loot'
 import Shop from './Components/Shop'
 import Work from './Components/Work'
 import Lost from './Components/Lost'
-import Monster from './Components/Monster'
+import Monster from './Components/Monster.jsx'
 import Dragon from './Components/Dragon'
 import Winner from './Components/Winner'
 

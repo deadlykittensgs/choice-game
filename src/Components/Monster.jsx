@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
+
+
+
+
+
+
 
 export default function monster({monster, setMonster, monsterHp, setmonsterHp, hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon }) {
    
     
 
+let battleResults = 0;
+let attackDamage = 0;
 
 
 const [response, setResponse] = useState(`The ${monster} is waiting`)
@@ -11,15 +20,35 @@ const [escape, setEscape] = useState(null)
 
 
 
+    useEffect(()=>{
+    
+if (monsterHp < 1) {
 
-  
-let battleResults = 0;
-let attackDamage = 0;
+        setResponse(`you have slain the monster!`)
+        let currentGold = gold
+        let newGold = currentGold + 1000
+        setGold(newGold)
+        setmonsterHp(Infinity)
+        setEscape("Return to town")
+        console.log(gold)
+        return
+      
+    }})
+
+
 
 
 function attack() {
-    setEscape(null)
-    
+
+
+        if (monsterHp === Infinity) {
+        
+          return
+        }
+
+
+    setEscape(null) 
+   
 
 let dodgeChance = Math.floor(Math.random() * 10) +1 
 
@@ -32,44 +61,40 @@ if(dodgeChance > 7) {
 
 if (weapon === "fist"){
     attackDamage = Math.floor(Math.random() * 200) +1
- battleResults = monsterHp - attackDamage
- setmonsterHp(battleResults)
- setResponse(`You hit the ${monster} for ${attackDamage}hp`)
+    battleResults = monsterHp - attackDamage
 }
-  if (weapon === "stick")
-  attackDamage = Math.floor(Math.random() * 400) +1
+  if (weapon === "stick") {
+   attackDamage = Math.floor(Math.random() * 400) +1
    battleResults = monsterHp - attackDamage
-  setmonsterHp(battleResults)
-  setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 }
 
 if (weapon === "dagger") {
     attackDamage = Math.floor(Math.random() * 800) +1
     battleResults = monsterHp - attackDamage
-    setmonsterHp(battleResults)
-    setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 }
 
 if (weapon === "sword") {
     attackDamage = Math.floor(Math.random() * 1600) +1
      battleResults = monsterHp - attackDamage
-    setmonsterHp(battleResults)
-    setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 }
 
 
   if (weapon === "dragonslayer") {
     attackDamage = Math.floor(Math.random() * 3500) +1
-    attackDamage = 100
     battleResults = monsterHp - attackDamage
-    setmonsterHp(battleResults)
-    setResponse(`You hit the ${monster} for ${attackDamage}hp`)
-    
   }
+  setmonsterHp(battleResults)
+  setResponse(`You hit the ${monster} for ${attackDamage}hp`)
 
-
+}
 
 function flee() {
+
+    if (monsterHp === Infinity) {
+        
+        return
+      }
+
     let fleeAttempt = Math.floor(Math.random() * 10) +1
 
 if (fleeAttempt < 8) {
@@ -77,21 +102,19 @@ console.log("you escaped")
 console.log(fleeAttempt);
 setResponse(`You outrun the ${monster} and escaped`)
 setEscape("escape")
-
-
 } 
+
 if (fleeAttempt > 8) {
 setHp(hp -10)
 setEscape(null)
 setResponse("you tripped and fell losing 10 hp and failed ot escape")
 }
 }
-// function befriend() {
 
 
-// console.log("a")
-
-// }
+function befriend() {
+console.log("a")
+}
 
 
     
@@ -146,4 +169,3 @@ setResponse("you tripped and fell losing 10 hp and failed ot escape")
         </div>
       )
 }
-
