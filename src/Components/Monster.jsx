@@ -21,18 +21,40 @@ const [escape, setEscape] = useState(null)
 
 
     useEffect(()=>{
-    
+
+        let whichMonster = 0
+
+        
 if (monsterHp < 1) {
+
+
+    if (monster === "goblin") {
+        whichMonster = 1000
+    }
+    if (monster === "giant") {
+        whichMonster = 2000
+    }
+    if (monster === "randy") {
+        whichMonster = 5000
+    }
+
+
+
 
         setResponse(`you have slain the monster!`)
         let currentGold = gold
-        let newGold = currentGold + 1000
+        let newGold = currentGold + whichMonster
         setGold(newGold)
         setmonsterHp(Infinity)
         setEscape("Return to town")
         console.log(gold)
         return
       
+
+
+
+
+
     }})
 
 
@@ -113,7 +135,8 @@ setResponse("you tripped and fell losing 10 hp and failed ot escape")
 
 
 function befriend() {
-console.log("a")
+    setResponse(`you cant befriend a ${monster}. you were hit for 50hp`)
+    setHp(hp -50)
 }
 
 
@@ -127,9 +150,9 @@ console.log("a")
     <div className='flex bg-zinc-400 justify-evenly p-3' > 
     {/* stats  */}
        <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
-       <p className='text-green-400'>HP: {hp}</p> 
-       <p className='text-yellow-300'>Gold:{gold}</p> 
-       <p>Weapon: {weapon}</p>
+       <p className='text-green-400'><i className="fa-solid fa-heart"></i> : {hp}</p> 
+       <p className='text-yellow-300'><i className="fa-solid fa-coins"></i> :{gold}</p> 
+       <p><i class="fa-solid fa-gun"></i> : {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>
@@ -137,7 +160,6 @@ console.log("a")
         </div>
         {/* location  */}
         <div className='flex flex-col self-center '>
-        <button><i onClick={() => changePage("town")} className="fa-solid fa-house" ></i></button>
             <p>Monster</p> 
         </div>
         
@@ -156,7 +178,7 @@ console.log("a")
     <div className='flex justify-evenly p-3'> 
         <button className='bg-yellow-500 w-1/5' onClick={() => attack()} >Attack</button>
         <button className='bg-yellow-500 w-1/5' onClick={() => flee()} >Flee</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => attack() } >befriend</button>
+        <button className='bg-yellow-500 w-1/5' onClick={() => befriend() } >befriend</button>
     </div>
     
     <div className='flex align-center justify-center p-10'> {response} <button onClick={ () => changePage("town")} className='bg-yellow-500 rounded'>{escape}</button></div>

@@ -116,9 +116,9 @@ export default function Dragon({setmonsterHp, monsterHp, setMonster, monster, hp
     <div className='flex bg-zinc-400 justify-evenly p-3' > 
     {/* stats  */}
        <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
-       <p className='text-green-400'>HP: {hp}</p> 
-       <p className='text-yellow-300'>Gold:{gold}</p> 
-       <p>Weapon: {weapon}</p>
+       <p className='text-green-400'><i className="fa-solid fa-heart"></i> : {hp}</p> 
+       <p className='text-yellow-300'><i className="fa-solid fa-coins"></i> :{gold}</p> 
+       <p><i class="fa-solid fa-gun"></i> : {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>
@@ -127,7 +127,6 @@ export default function Dragon({setmonsterHp, monsterHp, setMonster, monster, hp
         {/* location  */}
        
         <div className='flex flex-col self-center '>
-        <button><i onClick={() => changePage("town")} className="fa-solid fa-house" ></i></button>
             <p>Dragon</p> 
         </div>
         
