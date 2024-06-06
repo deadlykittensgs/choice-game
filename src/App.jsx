@@ -16,13 +16,14 @@ import Winner from './Components/Winner'
 
 
 
-function App() {
+function App(i, seti) {
   const [location, setLocation] = useState("town")
   const [hp, setHp] = useState(100)
   const [gold, setGold] = useState(500)
   const [weapon, setWeapon] = useState("fist")
   const[monster, setMonster]=useState(null)
   const [monsterHp, setmonsterHp] = useState(1)
+  const [index, setIndex] = useState(1)
 
 
 
@@ -57,10 +58,10 @@ function conditionallyRender() {
     return(<Town   changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
   if (location === 'shop') {
-    return(<Shop  changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
+    return(<Shop index={index} setIndex={setIndex} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)
   }
   if (location === 'work') {
-    return(<Work  changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon}   />)
+    return(<Work index={index} setIndex={setIndex} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon}   />)
   }
   if (location === 'explore') {
     return(<Explore setMonster={setMonster} setmonsterHp={setmonsterHp} changeHp={changeHp} changeGold={changeGold} changePage={changePage} changeWepon={changeWepon}   hp={hp} setHp={setHp} gold={gold} setGold={setGold} weapon={weapon} setWeapon={setWeapon} />)

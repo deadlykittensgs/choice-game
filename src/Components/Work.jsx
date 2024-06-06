@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
-export default function Work({hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon }) {
+export default function Work({hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon,index,setIndex}) {
 
 const [report, setReport] = useState(null)
 
@@ -36,6 +36,7 @@ function workForButcher() {
     if (randomNumber === 20) {
         setReport("you were awarded a sword for your hard work!")
         setWeapon("sword")
+        setIndex(3)
     }
 
 }
@@ -56,6 +57,7 @@ function workForMiller() {
     if (randomNumber === 20) {
         setReport("you were awarded a sword for your hard work!")
         setWeapon("sword")
+        setIndex(3)
     }
 
 }

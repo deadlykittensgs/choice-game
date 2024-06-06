@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function Shop({hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon }) {
+export default function Shop({hp, setHp, gold, setGold, weapon, setWeapon, changePage, changeHp, changeGold, changeWepon, index,setIndex }) {
 
 
-const [i, seti] = useState(1)
+
 const [response, setResponse] = useState(null)
 
 function buyHp() {
@@ -32,26 +32,30 @@ function buyWeapon() {
         return
     }
 
-    if (i === 1) {
+    if (index === 1) {
         setGold( gold -1000)
         setWeapon("stick")
-        seti(2)
+        setIndex(2)
     
     }
-    if (i === 2) {
+    if (index === 2) {
         setGold( gold -1000)
         setWeapon("dagger")
-        seti(3)
+        setIndex(3)
     }
-    if (i === 3) {
+    if (index === 3) {
         setGold( gold -1000)
         setWeapon("sword")
-        seti(4)
+        setIndex(4)
     }
-    if (i === 4) {
+    if (index === 4) {
         setGold( gold -1000)
         setWeapon("dragonslayer")
-        seti(5)
+        setIndex(5)
+    }
+    if (index === 5) {
+      return
+        setIndex(5)
     }
 
 }
