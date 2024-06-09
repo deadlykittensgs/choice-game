@@ -76,7 +76,7 @@ let dodgeChance = Math.floor(Math.random() * 10) +1
 
 if(dodgeChance > 7) {
     setResponse(`The ${monster} dodged your attack and hits you for 80hp`) 
-    setHp(hp -40)
+    setHp(hp -80)
     return
 }
 

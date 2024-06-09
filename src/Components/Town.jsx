@@ -13,16 +13,16 @@ export default function Town({ hp, setHp, gold, setGold, weapon, setWeapon, chan
         <div className='flex flex-col'>
     
     {/* </header> */}
-    <div className='flex bg-zinc-400 justify-evenly p-3' > 
+    <div className='flex bg-zinc-400 justify-between  p-7 min-h-[105px]'  > 
     {/* stats  */}
-       <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
+       <div className='flex flex-col gap-3 text-sm text-start leading-[0.4rem] text-align'>
        <p className='text-green-400'><i className="fa-solid fa-heart"></i> : {hp}</p> 
        <p className='text-yellow-300'><i className="fa-solid fa-coins"></i> :{gold}</p> 
-       <p><i class="fa-solid fa-gun"></i> : {weapon}</p>
+       <p><i className="fa-solid fa-gun"></i> : {weapon}</p>
         </div> 
     {/* title  */}
         <div className='flex self-center '>
-            <p className='text-[2rem]'>DragonSlayer</p>
+            <p className=' text-s sm:text-base md:text-xl lg:text-xxl'>DragonSlayer</p>
         </div>
         {/* location  */}
         <div className='flex self-center '>Town</div>

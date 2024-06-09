@@ -55,7 +55,6 @@ function buyWeapon() {
     }
     if (index === 5) {
       return
-        setIndex(5)
     }
 
 }
