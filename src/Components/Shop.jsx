@@ -27,6 +27,9 @@ function buyLuck() {
 }
 
 function buyWeapon() {
+
+
+    let declaration = weapon
     if (gold < 1000) {
         setResponse("you do not have sufficient funds")
         return
@@ -36,24 +39,30 @@ function buyWeapon() {
         setGold( gold -1000)
         setWeapon("stick")
         setIndex(2)
+        setResponse(`you have purchased the stick`)
     
     }
     if (index === 2) {
         setGold( gold -1000)
         setWeapon("dagger")
         setIndex(3)
+        setResponse(`you have purchased the dagger`)
     }
     if (index === 3) {
         setGold( gold -1000)
         setWeapon("sword")
         setIndex(4)
+        setResponse(`you have purchased the sword`)
     }
     if (index === 4) {
         setGold( gold -1000)
         setWeapon("dragonslayer")
         setIndex(5)
+        
+        setResponse(`you have purchased the dragonslayer`)
     }
     if (index === 5) {
+        setResponse(`you have the max weapon`)
       return
     }
 
