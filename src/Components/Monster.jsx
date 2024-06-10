@@ -144,7 +144,7 @@ function befriend() {
     return (
 
         // container 
-        <div className='flex flex-col'>
+        <div className='flex flex-col bg-image:url()'>
     
     {/* </header> */}
     <div className='flex bg-zinc-400 justify-evenly p-3' > 

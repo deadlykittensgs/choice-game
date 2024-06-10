@@ -13,7 +13,7 @@ export default function Town({ hp, setHp, gold, setGold, weapon, setWeapon, chan
         <div className='flex flex-col'>
     
     {/* </header> */}
-    <div className='flex bg-zinc-400 justify-between  p-7 min-h-[105px]'  > 
+    <div className=' text-slate-100 flex bg-zinc-900 justify-between  p-7 min-h-[105px]'  > 
     {/* stats  */}
        <div className='flex flex-col gap-3 text-sm text-start leading-[0.4rem] text-align'>
        <p className='text-green-400'><i className="fa-solid fa-heart"></i> : {hp}</p> 
@@ -33,7 +33,7 @@ export default function Town({ hp, setHp, gold, setGold, weapon, setWeapon, chan
     
     
     {/* body  */}
-    <div className='flex flex-col bg-zinc-200'>
+    <div className=' text-slate-200 flex flex-col bg-zinc-600'>
     <p className='flex text-center p-10'>Welcome to the Town. Your mision is to protect it from the draggon. here you can shop, explore, or work
     </p>
     

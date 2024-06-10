@@ -92,7 +92,7 @@ function conditionallyRender() {
   return (
     <section className='flex flex-col h-screen w-screen'>
     <Header/>
-    <div className=' bg-zinc-700 flex flex-1 justify-center items-center'>
+    <div className=' bg-shop-page bg-cover bg-no-repeat bg-center flex flex-1 justify-center items-center'>
     <div className='flex h-3/6 w-3/4 justify-center items-center'>
     {conditionallyRender()}
     </div> 

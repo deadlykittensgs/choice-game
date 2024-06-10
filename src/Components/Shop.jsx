@@ -78,7 +78,7 @@ return (
    <div className='flex flex-col gap-3 text-sm tracking-tighter text-center leading-[0.4rem]'>
    <p className='text-green-400'><i className="fa-solid fa-heart"></i> : {hp}</p> 
        <p className='text-yellow-300'><i className="fa-solid fa-coins"></i> :{gold}</p> 
-       <p><i class="fa-solid fa-gun"></i> : {weapon}</p>
+       <p><i className="fa-solid fa-gun"></i> : {weapon}</p>
     </div> 
 {/* title  */}
     <div className='flex self-center '>

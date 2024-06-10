@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'shop-page': "url('./src/Public/linktoimage.jpg')",
+      }
+    },
   },
   plugins: [],
 }
