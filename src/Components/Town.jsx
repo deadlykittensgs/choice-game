@@ -39,9 +39,9 @@ export default function Town({ hp, setHp, gold, setGold, weapon, setWeapon, chan
     
     {/* buttons  */}
     <div className='flex justify-evenly p-3'> 
-        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("explore")}>Explore</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("shop")} >Shop</button>
-        <button className='bg-yellow-500 w-1/5' onClick={() => changePage("work")} >Work</button>
+        <button className=' text-blue-900 bg-yellow-500 w-1/5' onClick={() => changePage("explore")}>Explore</button>
+        <button className=' text-blue-900 bg-yellow-500 w-1/5' onClick={() => changePage("shop")} >Shop</button>
+        <button className=' text-blue-900 bg-yellow-500 w-1/5' onClick={() => changePage("work")} >Work</button>
     </div>
     
     <div className='flex align-center justify-center p-10'> Good Luck!</div>
